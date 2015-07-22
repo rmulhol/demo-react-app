@@ -1,0 +1,27 @@
+{
+  "name": "demo-react-app",
+  "version": "0.0.1",
+  "description": "A demo app built with React",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -t reactify js/app.js -o js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmulhol/demo-react-app.git"
+  },
+  "author": "Rob Mulholand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmulhol/demo-react-app/issues"
+  },
+  "homepage": "https://github.com/rmulhol/demo-react-app#readme",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.0",
+    "reactify": "^1.1.1"
+  }
+}
