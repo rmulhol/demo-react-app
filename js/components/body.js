@@ -2,6 +2,8 @@ var React = require('react');
 var Col = require('react-bootstrap/lib/Col');
 var Thumbnail = require('react-bootstrap/lib/Thumbnail');
 var Button = require('react-bootstrap/lib/Button');
+var DemoAppActions = require('../actions/demo_app_actions');
+var DemoAppStore = require('../stores/demo_app_store');
 
 var Body = React.createClass({
   getDefaultProps: function() {
@@ -17,8 +19,17 @@ var Body = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var self = this;
+    var demoAppStore = new DemoAppStore();
+
+    demoAppStore.addLogoListener(function(dispatchedState) {
+      self.setState({ showReactLogo: dispatchedState.showReactLogo });
+    });
+  },
+
   toggleImage: function() {
-    this.setState({ showReactLogo: !this.state.showReactLogo });
+    DemoAppActions.toggleLogo(this.state.showReactLogo);
   },
 
   render: function() {
